@@ -1,0 +1,27 @@
+<style>  
+  .container {
+    font-size: 40px;
+    min-height: 500px;
+    width: 100%;
+    background: LightGray;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-gap: 40px;
+  }
+</style>
+
+item1 {
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+
+ </style>
+
+
+
+
+
