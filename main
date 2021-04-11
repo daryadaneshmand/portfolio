@@ -1,0 +1,321 @@
+<style>
+
+body {
+    min-height: 50%;
+}
+
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+    }
+
+
+:root {
+  --on: 0;
+  --bg: hsl(
+    calc(200 - (var(--on) * 210)),
+    calc((20 + (var(--on) * 10)) * 1%),
+    calc((20 + (var(--on) * 65)) * 1%)
+  );
+  --cord: hsl(20, 5%, calc((60 - (var(--on) * 50)) * 40%));
+  --stroke: hsl(0, 0%, calc((60 - (var(--on) * 50)) * 1%));
+  --shine: hsla(0, 0%, 100%, calc(0.75 - (var(--on) * 0.5%)));
+  --cap: hsl(0, 0%, calc((40 + (var(--on) * 30)) * 1%));
+  --filament: hsl(
+    45,
+    calc(var(--on) * 80%),
+    calc((25 + (var(--on) * 75)) * 1%)
+  );
+}
+body {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-align: left;
+    align-items: left;
+  -webkit-box-pack: left;
+    justify-content: left;
+  background: var(--bg);
+  z-index: 1;   //ordering new code
+}
+.toggle-scene {
+  overflow: visible !important;
+  height: 50vmin;
+  position: absolute;
+}
+.toggle-scene__cord {
+  stroke: var(--cord);
+  cursor: move;
+}
+.toggle-scene__cord:nth-of-type(1) {
+  display: none;
+}
+.toggle-scene__cord:nth-of-type(2),
+.toggle-scene__cord:nth-of-type(3),
+.toggle-scene__cord:nth-of-type(4),
+.toggle-scene__cord:nth-of-type(5) {
+  display: none;
+}
+.toggle-scene__cord-end {
+  stroke: var(--cord);
+  fill: var(--cord);
+}
+.toggle-scene__dummy-cord {
+  stroke-width: 6;
+  stroke: black;   //var(--cord)
+  z-index
+}
+.bulb__filament {
+  stroke: var(--filament);
+}
+.bulb__shine {
+  stroke: var(--shine);
+}
+.bulb__flash {
+  stroke: #004016;
+  display: none;
+}
+.bulb__bulb {
+  stroke: var(--stroke);
+  fill: hsla(
+    calc(180 - (95 * var(--on))),
+    80%,
+    80%,
+    calc(0.1 + (0.4 * var(--on)))
+  );
+}
+.bulb__cap {
+  fill: var(--cap);
+}
+.bulb__cap-shine {
+  fill: var(--shine);
+}
+.bulb__cap-outline {
+  stroke: var(--stroke);
+}
+
+
+
+.cloud{ 
+   position: relative;
+   right: 550px;
+   margin-top:80px;
+   width:13em;
+   height:110px;
+   background: rgba(255,255,255,0.4);
+   backdrop-filter: blur(10px);
+   box-shadow: 10px 10px rgba(0,0,0,0.2);
+   border-radius:100px;
+}
+.cloud::after, .cloud::before{
+    content:"";
+    position:relative;
+    display:inline-block;
+    background:inherit;
+    border-radius:inherit;
+}
+.cloud::after{
+    width:130px;
+    height:100px;
+    top:-220px;
+    left:20px;
+}
+
+.cloud::before{
+    width:180px;
+    height:180px;
+    top: -70px;
+    left:60px;
+
+}
+           
+      
+      
+      
+      
+h1 {
+  color: #ad74a0;
+  font-size: 40px;
+  font-family: monospace;
+  font-weight: 19;
+  position: relative;
+  left: 155px;
+}
+
+
+h2 {
+  font-size: 20px;
+}
+
+h3 {
+  color: black;
+  font-size: 15px;
+  position: relative;
+  top: 50px;
+  left: 155px;
+}
+
+
+    
+#navbar {
+  width: 100%;
+}
+
+  nav ul {
+    margin: 0px;
+    width: 550px; //new code
+    padding: 30px 0px 5px 30px;
+    background-color: transparent;
+    position: relative;
+    top: 10px;
+    z-index: 2;
+    
+  }
+  nav li {
+    display: inline-block;
+    margin-right:30px;
+    position: relative;
+    left: 100px;
+  }
+
+
+    
+nav li:hover {
+  animation-name: navbarhover;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes navbarhover {
+  100% {
+    background: black;
+  }
+}
+
+a {
+  color: #ad74a0;
+  text-align: center;
+  padding: 10px 16px;
+  text-decoration: none;
+}
+
+
+
+.Vansbox {
+  position: relative;
+  top: 270px;
+  width: 26vw;  
+  height: 32vh;  
+  background: linear-gradient(
+    45deg,
+    #ccffff,
+    #ffcccc
+  );
+  box-shadow: 0 20px 30px #8ed6e8;
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: monospace;
+  font-weight: 19;
+  color: black;
+  padding: 70px;
+}
+
+
+.Projects {
+  position: relative;
+  top: 270px; 
+  width: 26vw;
+  height: 32vh;
+  background: linear-gradient(
+    45deg,
+    #ffcccc,
+    #eddffc,
+    #dbfbf1
+  );
+  box-shadow: 0 20px 30px #8ed6e8; 
+  text-align: center;
+  font-size: 1.5vw;
+  font-family: monospace;
+  font-weight: 19;
+  color: black;
+  padding: 70px;
+  
+}
+
+
+#box1 {
+  left: -370px;
+}
+
+#box2 {
+  left: -290px;
+}
+
+#box-container {
+  display: flex;
+}
+
+.Vansbox:hover {
+  animation-name: box-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes box-color {
+  100% {
+    background: white;
+  }
+}
+
+.Projects:hover{
+  animation-name: projects-color;
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+}
+
+@keyframes projects-color {
+  100% {
+    background: white;
+  }
+}
+
+
+
+form {
+  display: inline;
+  color: white;
+  position: relative;
+  top: 650px;
+  left: -1050px;
+  margin-left: -7vw;
+}
+
+.basic {
+  position: relative;
+  top: 30px;
+  right: 180px;
+  width: 10vw;
+  height: 20vh;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+  
+.blur {
+  position: relative;
+  top: 40px;
+  right: 120px;
+  width: 10vw;
+  height: 15vh;
+  background: rgba(255,255,255,0.4);
+  backdrop-filter: blur(10px);
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+
+
+</style>
+
